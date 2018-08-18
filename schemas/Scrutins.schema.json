@@ -1,0 +1,454 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "scrutins": {
+        "type": "object",
+        "properties": {
+          "scrutin": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "required": [
+                "@xmlns:xsi",
+                "uid",
+                "numero",
+                "organeRef",
+                "legislature",
+                "sessionRef",
+                "seanceRef",
+                "dateScrutin",
+                "quantiemeJourSeance",
+                "titre",
+                "modePublicationDesVotes"
+              ],
+              "properties": {
+                "@xmlns:xsi": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uid": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "numero": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "organeRef": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "legislature": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sessionRef": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "seanceRef": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "dateScrutin": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "quantiemeJourSeance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "typeVote": {
+                  "type": "object",
+                  "properties": {
+                    "codeTypeVote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "libelleTypeVote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "typeMajorite": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "codeTypeVote",
+                    "libelleTypeVote",
+                    "typeMajorite"
+                  ]
+                },
+                "sort": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "libelle": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "libelle"
+                  ]
+                },
+                "titre": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "demandeur": {
+                  "type": "object",
+                  "properties": {
+                    "texte": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "referenceLegislative": {}
+                  },
+                  "required": [
+                    "texte"
+                  ]
+                },
+                "objet": {
+                  "type": "object",
+                  "properties": {
+                    "libelle": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "referenceLegislative": {}
+                  },
+                  "required": [
+                    "libelle"
+                  ]
+                },
+                "modePublicationDesVotes": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "syntheseVote": {
+                  "type": "object",
+                  "properties": {
+                    "nombreVotants": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "suffragesExprimes": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "nbrSuffragesRequis": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "annonce": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "decompte": {
+                      "type": "object",
+                      "properties": {
+                        "nonVotants": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "pour": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "contre": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "abstentions": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "nonVotantsVolontaires": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "nonVotants",
+                        "pour",
+                        "contre",
+                        "abstentions",
+                        "nonVotantsVolontaires"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "nombreVotants",
+                    "suffragesExprimes",
+                    "nbrSuffragesRequis",
+                    "annonce",
+                    "decompte"
+                  ]
+                },
+                "ventilationVotes": {
+                  "type": "object",
+                  "properties": {
+                    "organe": {
+                      "type": "object",
+                      "properties": {
+                        "organeRef": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "groupes": {
+                          "type": "object",
+                          "properties": {
+                            "groupe": {
+                              "type": "array",
+                              "uniqueItems": true,
+                              "minItems": 1,
+                              "items": {
+                                "required": [
+                                  "organeRef",
+                                  "nombreMembresGroupe"
+                                ],
+                                "properties": {
+                                  "organeRef": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "nombreMembresGroupe": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "vote": {
+                                    "type": "object",
+                                    "properties": {
+                                      "positionMajoritaire": {
+                                        "type": "string",
+                                        "minLength": 1
+                                      },
+                                      "decompteVoix": {
+                                        "type": "object",
+                                        "properties": {
+                                          "nonVotants": {
+                                            "type": "string",
+                                            "minLength": 1
+                                          },
+                                          "pour": {
+                                            "type": "string",
+                                            "minLength": 1
+                                          },
+                                          "contre": {
+                                            "type": "string",
+                                            "minLength": 1
+                                          },
+                                          "abstentions": {
+                                            "type": "string",
+                                            "minLength": 1
+                                          },
+                                          "nonVotantsVolontaires": {
+                                            "type": "string",
+                                            "minLength": 1
+                                          }
+                                        },
+                                        "required": [
+                                          "nonVotants",
+                                          "pour",
+                                          "contre",
+                                          "abstentions",
+                                          "nonVotantsVolontaires"
+                                        ]
+                                      },
+                                      "decompteNominatif": {
+                                        "type": "object",
+                                        "properties": {
+                                          "nonVotants": {
+                                            "type": "object",
+                                            "properties": {
+                                              "votant": {
+                                                "type": "array",
+                                                "uniqueItems": true,
+                                                "minItems": 1,
+                                                "items": {
+                                                  "required": [
+                                                    "acteurRef",
+                                                    "mandatRef",
+                                                    "causePositionVote"
+                                                  ],
+                                                  "properties": {
+                                                    "acteurRef": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    },
+                                                    "mandatRef": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    },
+                                                    "causePositionVote": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "required": [
+                                              "votant"
+                                            ]
+                                          },
+                                          "pours": {
+                                            "type": "object",
+                                            "properties": {
+                                              "votant": {
+                                                "type": "array",
+                                                "uniqueItems": true,
+                                                "minItems": 1,
+                                                "items": {
+                                                  "required": [
+                                                    "acteurRef",
+                                                    "mandatRef",
+                                                    "parDelegation"
+                                                  ],
+                                                  "properties": {
+                                                    "acteurRef": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    },
+                                                    "mandatRef": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    },
+                                                    "parDelegation": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "required": [
+                                              "votant"
+                                            ]
+                                          },
+                                          "contres": {},
+                                          "abstentions": {}
+                                        },
+                                        "required": [
+                                          "nonVotants",
+                                          "pours"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "positionMajoritaire",
+                                      "decompteVoix",
+                                      "decompteNominatif"
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "required": [
+                            "groupe"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "organeRef",
+                        "groupes"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "organe"
+                  ]
+                },
+                "miseAuPoint": {
+                  "type": "object",
+                  "properties": {
+                    "nonVotants": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "pours": {
+                      "type": "object",
+                      "properties": {
+                        "votant": {
+                          "type": "object",
+                          "properties": {
+                            "acteurRef": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "mandatRef": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          },
+                          "required": [
+                            "acteurRef",
+                            "mandatRef"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "votant"
+                      ]
+                    },
+                    "abstentions": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "nonVotantsVolontaires": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "contres": {},
+                    "dysfonctionnement": {
+                      "type": "object",
+                      "properties": {
+                        "nonVotants": {},
+                        "pour": {},
+                        "contre": {},
+                        "abstentions": {},
+                        "nonVotantsVolontaires": {}
+                      },
+                      "required": []
+                    }
+                  },
+                  "required": [
+                    "nonVotants",
+                    "pours",
+                    "abstentions",
+                    "nonVotantsVolontaires",
+                    "dysfonctionnement"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "scrutin"
+        ]
+      }
+    },
+    "required": [
+      "scrutins"
+    ]
+  }
