@@ -1,0 +1,636 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "export": {
+        "type": "object",
+        "properties": {
+          "@xmlns:xsi": {
+            "type": "string",
+            "minLength": 1
+          },
+          "textesLegislatifs": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "required": [
+                    "@xsi:type",
+                    "uid",
+                    "legislature",
+                    "denominationStructurelle",
+                    "provenance",
+                    "dossierRef"
+                  ],
+                  "properties": {
+                    "@xsi:type": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uid": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "legislature": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "cycleDeVie": {
+                      "type": "object",
+                      "properties": {
+                        "chrono": {
+                          "type": "object",
+                          "properties": {
+                            "dateCreation": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "dateDepot": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "datePublication": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "datePublicationWeb": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          },
+                          "required": [
+                            "dateCreation",
+                            "dateDepot",
+                            "datePublication",
+                            "datePublicationWeb"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "chrono"
+                      ]
+                    },
+                    "denominationStructurelle": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "provenance": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "titres": {
+                      "type": "object",
+                      "properties": {
+                        "titrePrincipal": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "titrePrincipalCourt": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "titrePrincipal",
+                        "titrePrincipalCourt"
+                      ]
+                    },
+                    "divisions": {},
+                    "dossierRef": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "redacteur": {},
+                    "classification": {
+                      "type": "object",
+                      "properties": {
+                        "famille": {
+                          "type": "object",
+                          "properties": {
+                            "depot": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "libelle": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "libelle"
+                              ]
+                            },
+                            "classe": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "libelle": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "libelle"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "depot",
+                            "classe"
+                          ]
+                        },
+                        "type": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "libelle": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "libelle"
+                          ]
+                        },
+                        "sousType": {},
+                        "statutAdoption": {}
+                      },
+                      "required": [
+                        "famille",
+                        "type"
+                      ]
+                    },
+                    "auteurs": {
+                      "type": "object",
+                      "properties": {
+                        "auteur": {
+                          "type": "object",
+                          "properties": {
+                            "organe": {
+                              "type": "object",
+                              "properties": {
+                                "organeRef": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "organeRef"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "organe"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "auteur"
+                      ]
+                    },
+                    "correction": {},
+                    "notice": {
+                      "type": "object",
+                      "properties": {
+                        "numNotice": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "formule": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "adoptionConforme": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "numNotice",
+                        "formule",
+                        "adoptionConforme"
+                      ]
+                    },
+                    "indexation": {},
+                    "imprimerie": {},
+                    "coSignataires": {},
+                    "depotAmendements": {
+                      "type": "object",
+                      "properties": {
+                        "amendementsSeance": {
+                          "type": "object",
+                          "properties": {
+                            "amendable": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "dateLimiteDepot": {}
+                          },
+                          "required": [
+                            "amendable"
+                          ]
+                        },
+                        "amendementsCommission": {
+                          "type": "object",
+                          "properties": {
+                            "commission": {
+                              "type": "object",
+                              "properties": {
+                                "organeRef": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "amendable": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "dateLimiteDepot": {}
+                              },
+                              "required": [
+                                "organeRef",
+                                "amendable"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "commission"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "amendementsSeance",
+                        "amendementsCommission"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "document"
+            ]
+          },
+          "dossiersLegislatifs": {
+            "type": "object",
+            "properties": {
+              "dossier": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "required": [],
+                  "properties": {
+                    "dossierParlementaire": {
+                      "type": "object",
+                      "properties": {
+                        "@xsi:type": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "uid": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "legislature": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "titreDossier": {
+                          "type": "object",
+                          "properties": {
+                            "titre": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "titreChemin": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "senatChemin": {}
+                          },
+                          "required": [
+                            "titre",
+                            "titreChemin"
+                          ]
+                        },
+                        "procedureParlementaire": {
+                          "type": "object",
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "libelle": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          },
+                          "required": [
+                            "code",
+                            "libelle"
+                          ]
+                        },
+                        "initiateur": {
+                          "type": "object",
+                          "properties": {
+                            "acteurs": {
+                              "type": "object",
+                              "properties": {
+                                "acteur": {
+                                  "type": "object",
+                                  "properties": {
+                                    "acteurRef": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    },
+                                    "mandatRef": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    }
+                                  },
+                                  "required": [
+                                    "acteurRef",
+                                    "mandatRef"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "acteur"
+                              ]
+                            },
+                            "organes": {
+                              "type": "object",
+                              "properties": {
+                                "organe": {
+                                  "type": "object",
+                                  "properties": {
+                                    "organeRef": {
+                                      "type": "object",
+                                      "properties": {
+                                        "uid": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        }
+                                      },
+                                      "required": [
+                                        "uid"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "organeRef"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "organe"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "acteurs",
+                            "organes"
+                          ]
+                        },
+                        "actesLegislatifs": {
+                          "type": "object",
+                          "properties": {
+                            "acteLegislatif": {
+                              "type": "object",
+                              "properties": {
+                                "@xsi:type": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "uid": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "codeActe": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "libelleActe": {
+                                  "type": "object",
+                                  "properties": {
+                                    "nomCanonique": {
+                                      "type": "string",
+                                      "minLength": 1
+                                    }
+                                  },
+                                  "required": [
+                                    "nomCanonique"
+                                  ]
+                                },
+                                "organeRef": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "dateActe": {},
+                                "actesLegislatifs": {
+                                  "type": "object",
+                                  "properties": {
+                                    "acteLegislatif": {
+                                      "type": "object",
+                                      "properties": {
+                                        "@xsi:type": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        },
+                                        "uid": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        },
+                                        "codeActe": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        },
+                                        "libelleActe": {
+                                          "type": "object",
+                                          "properties": {
+                                            "nomCanonique": {
+                                              "type": "string",
+                                              "minLength": 1
+                                            },
+                                            "libelleCourt": {
+                                              "type": "string",
+                                              "minLength": 1
+                                            }
+                                          },
+                                          "required": [
+                                            "nomCanonique",
+                                            "libelleCourt"
+                                          ]
+                                        },
+                                        "organeRef": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        },
+                                        "dateActe": {},
+                                        "actesLegislatifs": {
+                                          "type": "object",
+                                          "properties": {
+                                            "acteLegislatif": {
+                                              "type": "object",
+                                              "properties": {
+                                                "@xsi:type": {
+                                                  "type": "string",
+                                                  "minLength": 1
+                                                },
+                                                "uid": {
+                                                  "type": "string",
+                                                  "minLength": 1
+                                                },
+                                                "codeActe": {
+                                                  "type": "string",
+                                                  "minLength": 1
+                                                },
+                                                "libelleActe": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "nomCanonique": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    },
+                                                    "libelleCourt": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "nomCanonique",
+                                                    "libelleCourt"
+                                                  ]
+                                                },
+                                                "organeRef": {
+                                                  "type": "string",
+                                                  "minLength": 1
+                                                },
+                                                "dateActe": {
+                                                  "type": "string",
+                                                  "minLength": 1
+                                                },
+                                                "actesLegislatifs": {},
+                                                "initiateurs": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "organeRef": {
+                                                      "type": "string",
+                                                      "minLength": 1
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "organeRef"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "@xsi:type",
+                                                "uid",
+                                                "codeActe",
+                                                "libelleActe",
+                                                "organeRef",
+                                                "dateActe",
+                                                "initiateurs"
+                                              ]
+                                            }
+                                          },
+                                          "required": [
+                                            "acteLegislatif"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "@xsi:type",
+                                        "uid",
+                                        "codeActe",
+                                        "libelleActe",
+                                        "organeRef",
+                                        "actesLegislatifs"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "acteLegislatif"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "@xsi:type",
+                                "uid",
+                                "codeActe",
+                                "libelleActe",
+                                "organeRef",
+                                "actesLegislatifs"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "acteLegislatif"
+                          ]
+                        },
+                        "fusionDossier": {
+                          "type": "object",
+                          "properties": {
+                            "cause": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "dossierAbsorbantRef": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          },
+                          "required": [
+                            "cause",
+                            "dossierAbsorbantRef"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "@xsi:type",
+                        "uid",
+                        "legislature",
+                        "titreDossier",
+                        "procedureParlementaire",
+                        "initiateur",
+                        "actesLegislatifs",
+                        "fusionDossier"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "dossier"
+            ]
+          }
+        },
+        "required": [
+          "@xmlns:xsi",
+          "textesLegislatifs",
+          "dossiersLegislatifs"
+        ]
+      }
+    },
+    "required": [
+      "export"
+    ]
+  }
