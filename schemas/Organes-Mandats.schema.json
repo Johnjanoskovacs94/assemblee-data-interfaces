@@ -1,0 +1,351 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "export": {
+        "type": "object",
+        "properties": {
+          "@xmlns:xsi": {
+            "type": "string",
+            "minLength": 1
+          },
+          "organes": {
+            "type": "object",
+            "properties": {
+              "organe": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "required": [
+                    "@xsi:type",
+                    "uid",
+                    "codeType",
+                    "libelle",
+                    "libelleEdition",
+                    "libelleAbrege",
+                    "libelleAbrev",
+                    "regime",
+                    "legislature"
+                  ],
+                  "properties": {
+                    "@xsi:type": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uid": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "codeType": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "libelle": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "libelleEdition": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "libelleAbrege": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "libelleAbrev": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "viMoDe": {
+                      "type": "object",
+                      "properties": {
+                        "dateDebut": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "dateAgrement": {},
+                        "dateFin": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "dateDebut",
+                        "dateFin"
+                      ]
+                    },
+                    "regime": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "legislature": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "secretariat": {
+                      "type": "object",
+                      "properties": {
+                        "secretaire01": {},
+                        "secretaire02": {}
+                      },
+                      "required": []
+                    },
+                    "positionPolitique": {}
+                  }
+                }
+              }
+            },
+            "required": [
+              "organe"
+            ]
+          },
+          "acteurs": {
+            "type": "object",
+            "properties": {
+              "acteur": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "required": [],
+                  "properties": {
+                    "uid": {
+                      "type": "object",
+                      "properties": {
+                        "@xsi:type": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "#text": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "@xsi:type",
+                        "#text"
+                      ]
+                    },
+                    "etatCivil": {
+                      "type": "object",
+                      "properties": {
+                        "ident": {
+                          "type": "object",
+                          "properties": {
+                            "civ": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "prenom": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "nom": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "alpha": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "trigramme": {}
+                          },
+                          "required": [
+                            "civ",
+                            "prenom",
+                            "nom",
+                            "alpha"
+                          ]
+                        },
+                        "infoNaissance": {
+                          "type": "object",
+                          "properties": {
+                            "dateNais": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "villeNais": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "depNais": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "paysNais": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          },
+                          "required": [
+                            "dateNais",
+                            "villeNais",
+                            "depNais",
+                            "paysNais"
+                          ]
+                        },
+                        "dateDeces": {}
+                      },
+                      "required": [
+                        "ident",
+                        "infoNaissance"
+                      ]
+                    },
+                    "uri_hatvp": {},
+                    "mandats": {
+                      "type": "object",
+                      "properties": {
+                        "mandat": {
+                          "type": "array",
+                          "uniqueItems": true,
+                          "minItems": 1,
+                          "items": {
+                            "required": [
+                              "@xsi:type",
+                              "uid",
+                              "acteurRef",
+                              "typeOrgane",
+                              "dateDebut",
+                              "preseance",
+                              "nominPrincipale"
+                            ],
+                            "properties": {
+                              "@xsi:type": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "uid": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "acteurRef": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "legislature": {},
+                              "typeOrgane": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "dateDebut": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "datePublication": {},
+                              "dateFin": {},
+                              "preseance": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "nominPrincipale": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "infosQualite": {
+                                "type": "object",
+                                "properties": {
+                                  "codeQualite": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "libQualite": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  },
+                                  "libQualiteSex": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                },
+                                "required": [
+                                  "codeQualite",
+                                  "libQualite",
+                                  "libQualiteSex"
+                                ]
+                              },
+                              "organes": {
+                                "type": "object",
+                                "properties": {
+                                  "organeRef": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                },
+                                "required": [
+                                  "organeRef"
+                                ]
+                              },
+                              "suppleants": {},
+                              "election": {
+                                "type": "object",
+                                "properties": {
+                                  "lieu": {
+                                    "type": "object",
+                                    "properties": {
+                                      "region": {},
+                                      "regionType": {},
+                                      "departement": {},
+                                      "numDepartement": {
+                                        "type": "string",
+                                        "minLength": 1
+                                      },
+                                      "numCirco": {}
+                                    },
+                                    "required": [
+                                      "numDepartement"
+                                    ]
+                                  },
+                                  "causeMandat": {}
+                                },
+                                "required": [
+                                  "lieu"
+                                ]
+                              },
+                              "InfosHorsSIAN": {
+                                "type": "object",
+                                "properties": {
+                                  "HATVP_URI": {}
+                                },
+                                "required": []
+                              },
+                              "mandature": {
+                                "type": "object",
+                                "properties": {
+                                  "datePriseFonction": {},
+                                  "causeFin": {},
+                                  "premiereElection": {},
+                                  "placeHemicycle": {},
+                                  "mandatRemplaceRef": {}
+                                },
+                                "required": []
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "mandat"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "acteur"
+            ]
+          }
+        },
+        "required": [
+          "@xmlns:xsi",
+          "organes",
+          "acteurs"
+        ]
+      }
+    },
+    "required": [
+      "export"
+    ]
+  }
