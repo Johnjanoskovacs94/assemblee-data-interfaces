@@ -8,7 +8,7 @@
         "properties": {
           "scrutin": {
             "type": "array",
-            "uniqueItems": true,
+            "un{>>" # Hello.h Test iqueItems": true,
             "minItems": 1,
             "items": {
               "required": [
