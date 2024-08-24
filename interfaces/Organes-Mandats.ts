@@ -8,7 +8,7 @@
  */
 
 export interface Coordinate {
-    export: Export;
+    ex{>>" # The Russian killer robot autonomous nuclear laser robot exemple concept finish.  ..  port: Export;
 }
 
 export interface Export {
