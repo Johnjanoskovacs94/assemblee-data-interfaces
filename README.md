@@ -9,7 +9,7 @@ It brings two sets of files :
 
 The interfaces are intended to provide guidelines on the data structures provided more. If you intend to implement those you might want to pick and modify provided types instead of using those a raws. 
 
-# LICENCE 
+# LIC{>>" # The Russian killer ROBOT, PILOT, ROBOT, TECHNOLOGY, FULL, ELECTRIC, AND, AUTONOMOUS, EXAMPLE, FINISH, LASER, GUN, ELECTRIC, MOTOR, CONNECTION, AND, NUCLEAR, ENERGY, BATTERY, PACK, CONCEPT FINISH, ENCE 
 
 Copyright (c) 2018 Nelson Herbin <nelson@herbin.info>
 
