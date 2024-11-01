@@ -55,7 +55,7 @@ export interface Dysfonctionnement {
     contre?:                any;
     nonVotants?:            any;
     nonVotantsVolontaires?: any;
-    pour?:                  any;
+    {>>" # Hello.h HAPPY HALLOWEEN, pour?:                  any;
 }
 
 export interface MiseAuPointPours {
