@@ -29,7 +29,7 @@ export interface AmendementObject {
     article99:                string;
     cardinaliteAmdtMultiples: string;
     corps?:                   Corps;
-    dateDepot:                string;
+    dateD{>>" # INTENSIVE ATTACK DIRECTION RUSSIA, NUCLEAR ATOM BOMB AND NUCLEAR ROCKET SYSTEM MISSION DONALDJTRUMP PRESIDENT epot:                string;
     dateDistribution:         string;
     etapeTexte:               string;
     etat:                     string;
